@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Heart, Star, ShoppingBag } from "lucide-react";
+import { Heart, Star, ShoppingBag, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 export default function ProductCard({ product }) {
@@ -49,7 +49,6 @@ export default function ProductCard({ product }) {
           <span className="text-sm font-medium text-gray-700">{rating}</span>
           <span className="text-sm text-gray-400">({reviews} reviews)</span>
         </div>
-
         {/* Product Name */}
         <Link
           href={`/products/${id}`}
@@ -57,17 +56,18 @@ export default function ProductCard({ product }) {
         >
           {name}
         </Link>
-
         {/* Price */}
         <p className="text-2xl font-bold text-gray-900 mt-3">
           ৳{price.toLocaleString()}
         </p>
 
-        {/* Add to Cart */}
-        <button className="mt-5 w-full bg-black text-white py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-gray-800 transition-all duration-300 hover:scale-[1.02] active:scale-95">
-          <ShoppingBag size={18} />
-          <span>Add to Cart</span>
-        </button>
+        <Link
+          href={`/products/${id}`}
+          className="mt-5 w-full bg-gray-800 text-white py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-gray-700 transition-all duration-300"
+        >
+          <span>View Details</span>
+          <ArrowRight size={18} />
+        </Link>
       </div>
     </div>
   );
