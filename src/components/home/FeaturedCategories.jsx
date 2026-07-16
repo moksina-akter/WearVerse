@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const categories = [
   {
@@ -8,7 +9,7 @@ const categories = [
   },
   {
     name: "Shirt",
-    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300",
+    image: "https://i.ibb.co.com/0p7KF95W/86ff97df7157a6db1d94e249c340cd1a.jpg",
   },
   {
     name: "T-Shirt",
@@ -24,47 +25,61 @@ const categories = [
   },
   {
     name: "Polo",
-    image:
-      "https://i.ibb.co.com/PZqZvXXm/65c244873267a6444aba78846e6a94bc.jpg://images.unsplash.com/photo-1581655353564-df123a1eb820?w=300",
+    image: "https://i.ibb.co.com/PZqZvXXm/65c244873267a6444aba78846e6a94bc.jpg",
   },
 ];
 
 export default function FeaturedCategories() {
   return (
-    <section className="max-w-7xl mx-auto px-4 py-12">
-      {/* Section Header */}
-      <div className="flex justify-between items-center mb-8">
-        <h2 className="text-2xl font-bold text-gray-900">
-          Featured Categories
-        </h2>
+    <section className="max-w-7xl mx-auto px-4 py-16">
+      {/* Header */}
+      <div className="flex justify-between items-center mb-10">
+        <div>
+          <p className="text-sm text-gray-500 uppercase tracking-[4px]">
+            Categories
+          </p>
 
-        <button className="text-sm text-gray-500 hover:text-black transition">
+          <h2 className="text-3xl font-bold text-gray-900 mt-2">
+            Shop By Category
+          </h2>
+        </div>
+
+        <Link
+          href="/products"
+          className="text-sm md:text-sm text-gray-600 hover:text-black transition"
+        >
           View All
-        </button>
+        </Link>
       </div>
 
-      {/* Categories */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+      {/* Categories Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
         {categories.map((category) => (
-          <div
-            key={category.name}
-            className="flex flex-col items-center group cursor-pointer"
+          <Link
+            key={category.id}
+            href={`/products?category=${category.slug}`}
+            className="group"
           >
-            <div className="w-28 h-28 rounded-full overflow-hidden bg-gray-100 border border-gray-200 transition duration-300 group-hover:scale-105">
-              <Image
-                src={category.image}
-                alt={category.name}
-                width={120}
-                height={120}
-                className="w-full h-full object-cover"
-                unoptimized
-              />
-            </div>
+            <div className="bg-white rounded-3xl border border-gray-100 p-5 hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+              <div className="relative w-full h-36 overflow-hidden rounded-2xl bg-gray-50">
+                <Image
+                  src={category.image}
+                  alt={category.name}
+                  fill
+                  unoptimized
+                  className="object-cover group-hover:scale-110 transition duration-500"
+                />
+              </div>
 
-            <h3 className="mt-4 text-sm font-medium text-gray-700 group-hover:text-black transition">
-              {category.name}
-            </h3>
-          </div>
+              <div className="mt-4 text-center">
+                <h3 className="font-semibold text-gray-900">{category.name}</h3>
+
+                <p className="text-sm text-gray-500 mt-1">
+                  {category.productCount}
+                </p>
+              </div>
+            </div>
+          </Link>
         ))}
       </div>
     </section>
