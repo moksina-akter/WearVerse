@@ -12,7 +12,7 @@ export default function FeaturedProducts() {
           <p className="text-sm text-gray-500 uppercase tracking-[4px]">
             Trending Now
           </p>
-          <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="text-3xl font-bold text-gray-900 mt-2">
             Featured Products
           </h2>
         </div>
