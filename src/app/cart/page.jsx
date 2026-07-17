@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   RotateCcw,
   Truck,
+  ArrowRight,
 } from "lucide-react";
 
 export default function CartPage() {
@@ -54,7 +55,7 @@ export default function CartPage() {
   if (cartItems.length === 0) {
     return (
       <div className="max-w-7xl mx-auto py-24 text-center">
-        <h1 className="text-4xl font-bold mb-4">Your Cart is Empty</h1>
+        <h1 className="text-3xl font-bold mb-4">Your Cart is Empty</h1>
 
         <p className="text-gray-500 mb-8">
           Add some products to continue shopping.
@@ -62,9 +63,9 @@ export default function CartPage() {
 
         <Link
           href="/products"
-          className="bg-black text-white px-8 py-4 rounded-xl"
+          className="bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-white px-1 py-4 rounded-xl"
         >
-          Continue Shopping
+          Continue Shopping <ArrowRight size={18} />
         </Link>
       </div>
     );
@@ -142,7 +143,7 @@ export default function CartPage() {
         <div className="border border-gray-100 rounded-3xl p-8 h-fit sticky top-28">
           <h2 className="text-2xl font-bold mb-8">Order Summary</h2>
 
-          <div className="space-y-4 text-gray-600">
+          <div className="space-y-4 text-gray-600 mb-4">
             <div className="flex justify-between">
               <span>Subtotal</span>
               <span>৳{subtotal.toLocaleString()}</span>
@@ -161,10 +162,12 @@ export default function CartPage() {
             </div>
           </div>
 
-          <button className="w-full bg-gray-800 text-white py-4 rounded-2xl mt-8 font-semibold hover:bg-gray-700 transition">
+          <Link
+            href="/checkout"
+            className="w-full block text-center bg-gray-800  text-white py-4 rounded-2xl font-semibold hover:bg-gray-700 transition"
+          >
             Checkout
-          </button>
-
+          </Link>
           <div className="mt-8 space-y-5 text-sm text-gray-600">
             <div className="flex gap-3 items-center">
               <ShieldCheck size={20} />
