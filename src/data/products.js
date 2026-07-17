@@ -133,7 +133,7 @@ export const products = [
     price: 950,
     rating: 4.7,
     image:
-      "https://res.cloudinary.com/x4ibumo0/image/upload/v1784206210/a0eacb7c54feb6e919f4d75299e4df29_srscrx.jpg",
+      "https://res.cloudinary.com/x4ibumo0/image/upload/v1784216949/a0eacb7c54feb6e919f4d75299e4df29-removebg-preview_fgqfdt.png",
     colors: ["Grey", "Black"],
     sizes: ["M", "L", "XL"],
     inStock: false,

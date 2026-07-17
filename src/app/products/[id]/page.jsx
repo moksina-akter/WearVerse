@@ -1,188 +1,3 @@
-// import { products } from "@/data/products";
-// import Link from "next/link";
-// import {
-//   Star,
-//   Heart,
-//   ShoppingBag,
-//   ShieldCheck,
-//   Truck,
-//   RotateCcw,
-// } from "lucide-react";
-
-// export default async function ProductDetailsPage({ params }) {
-//   const { id } = await params;
-
-//   const product = products.find((item) => item.id === parseInt(id));
-
-//   if (!product) {
-//     return (
-//       <div className="text-center py-24">
-//         <h1 className="text-4xl font-bold mb-5">Product Not Found</h1>
-
-//         <Link
-//           href="/products"
-//           className="bg-black text-white px-6 py-3 rounded-xl"
-//         >
-//           Back To Products
-//         </Link>
-//       </div>
-//     );
-//   }
-
-//   const relatedProducts = products
-//     .filter(
-//       (item) => item.category === product.category && item.id !== product.id,
-//     )
-//     .slice(0, 4);
-
-//   return (
-//     <section className="max-w-7xl mx-auto px-4 py-10">
-//       {/* Breadcrumb */}
-//       <div className="text-sm text-gray-500 mb-8">
-//         Home / Products / <span className=" text-black "> {product.name}</span>
-//       </div>
-
-//       <div className="grid lg:grid-cols-2 gap-14">
-//         {/* Product Image */}
-//         <div className="bg-gray-50 rounded-3xl p-10">
-//           <img
-//             src={product.image}
-//             alt={product.name}
-//             className="w-full h-[550px] object-contain"
-//           />
-//         </div>
-
-//         {/* Product Info */}
-//         <div>
-//           <p className="uppercase tracking-widest text-sm text-gray-500">
-//             {product.category}
-//           </p>
-
-//           <h1 className="text-5xl font-bold mt-3">{product.name}</h1>
-
-//           {/* Rating */}
-//           <div className="flex items-center gap-2 mt-5">
-//             <Star className="fill-yellow-400 text-yellow-400" />
-
-//             <span className="font-semibold">{product.rating}</span>
-
-//             <span className="text-gray-500">({product.reviews} Reviews)</span>
-//           </div>
-
-//           {/* Price */}
-//           <h2 className="text-5xl font-black mt-6">
-//             ৳{product.price.toLocaleString()}
-//           </h2>
-
-//           {/* Description */}
-//           <p className="text-gray-600 leading-8 mt-6">{product.description}</p>
-
-//           {/* Brand */}
-//           <div className="mt-8 space-y-3">
-//             <p>
-//               <span className="font-semibold">Brand:</span> {product.category}
-//             </p>
-
-//             <p>
-//               <span className="font-semibold">SKU:</span> OXI-{product.id}
-//             </p>
-
-//             <p>
-//               <span className="font-semibold">Stock:</span>{" "}
-//               {product.inStock > 0 ? `${product.inStock} ` : "Out Of Stock"}
-//             </p>
-//           </div>
-
-//           {/* Colors */}
-//           <div className="mt-8">
-//             <h3 className="font-semibold mb-4">Colors</h3>
-
-//             <div className="flex gap-3">
-//               {product.colors.map((color) => (
-//                 <span
-//                   key={color}
-//                   className="px-5 py-2 rounded-full bg-gray-100"
-//                 >
-//                   {color}
-//                 </span>
-//               ))}
-//             </div>
-//           </div>
-
-//           {/* Sizes */}
-//           <div className="mt-8">
-//             <h3 className="font-semibold mb-4">Size</h3>
-
-//             <div className="flex gap-3">
-//               {product.sizes.map((size) => (
-//                 <button
-//                   key={size}
-//                   className="w-12 h-12 border rounded-xl hover:bg-black hover:text-white transition"
-//                 >
-//                   {size}
-//                 </button>
-//               ))}
-//             </div>
-//           </div>
-
-//           {/* Buttons */}
-//           <div className="flex gap-4 mt-10">
-//             <button className="flex items-center gap-2 bg-black text-white px-10 py-4 rounded-xl">
-//               <ShoppingBag size={20} />
-//               Add To Cart
-//             </button>
-
-//             <button className="border px-6 py-4 rounded-xl">
-//               <Heart size={20} />
-//             </button>
-//           </div>
-
-//           {/* Features */}
-//           <div className="grid grid-cols-3 gap-4 mt-12">
-//             <div className="text-center border rounded-xl p-4">
-//               <Truck className="mx-auto mb-2" />
-//               <p className="text-sm">Free Shipping</p>
-//             </div>
-
-//             <div className="text-center border rounded-xl p-4">
-//               <RotateCcw className="mx-auto mb-2" />
-//               <p className="text-sm">Easy Return</p>
-//             </div>
-
-//             <div className="text-center border rounded-xl p-4">
-//               <ShieldCheck className="mx-auto mb-2" />
-//               <p className="text-sm">Secure Payment</p>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Related Products */}
-//       <div className="mt-24">
-//         <h2 className="text-3xl font-bold mb-10">Related Products</h2>
-
-//         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-//           {relatedProducts.map((item) => (
-//             <div key={item.id} className="border rounded-2xl p-4">
-//               <img src={item.image} className="h-60 w-full object-contain" />
-
-//               <h3 className="font-semibold mt-4">{item.name}</h3>
-
-//               <p className="font-bold mt-2">৳{item.price}</p>
-
-//               <Link
-//                 href={`/products/${item.id}`}
-//                 className="mt-4 inline-block text-blue-600"
-//               >
-//                 View Details
-//               </Link>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
 "use client";
 
 import { products } from "@/data/products";
@@ -198,7 +13,8 @@ import {
   Minus,
 } from "lucide-react";
 import { use, useState } from "react";
-// import { use } from "react";
+import { addToCart } from "@/utils/cart";
+import { toast } from "react-toastify";
 
 export default function ProductDetailsPage({ params }) {
   const { id } = use(params);
@@ -237,8 +53,20 @@ export default function ProductDetailsPage({ params }) {
     <section className="max-w-7xl mx-auto px-4 py-12">
       {/* Breadcrumb */}
       <div className="text-sm text-gray-500 mb-10">
-        Home / Products /
-        <span className="text-black font-medium"> {product.name}</span>
+        <Link
+          href="/"
+          className="text-sm md:text-sm text-gray-600 hover:text-black transition"
+        >
+          Home
+        </Link>{" "}
+        /
+        <Link
+          href="/products"
+          className="text-sm md:text-sm text-gray-600 hover:text-black transition"
+        >
+          Products
+        </Link>{" "}
+        /<span className="text-black font-medium"> {product.name}</span>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-16">
@@ -371,7 +199,15 @@ export default function ProductDetailsPage({ params }) {
 
           {/* Buttons */}
           <div className="flex gap-4 mt-10">
-            <button className="flex-1 bg-gray-800 text-white py-4 rounded-2xl font-semibold flex justify-center items-center gap-3 hover:bg-gray-700 transition">
+            <button
+              onClick={() => {
+                addToCart(product, quantity);
+                toast.success(`${product.name} added to cart`, {
+                  description: `${selectedSize} • ${selectedColor} • Qty: ${quantity}`,
+                });
+              }}
+              className="flex-1 bg-gray-800 text-white py-4 rounded-2xl font-semibold flex justify-center items-center gap-3 hover:bg-gray-700 transition"
+            >
               <ShoppingBag size={20} />
               Add To Cart
             </button>
