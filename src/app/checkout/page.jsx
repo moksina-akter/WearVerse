@@ -376,7 +376,8 @@ export default function CheckoutPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gray-800 text-white py-5 rounded-2xl font-semibold mt-6 hover:bg-gray-700 transition disabled:opacity-50"
+              className="w-full bg-gray-800 text-white py-5 rounded-2xl font-semibold transition-all duration-300
+hover:scale-105 mt-6 hover:bg-gray-700 disabled:opacity-50"
             >
               {loading ? "Processing Order..." : "Place Order"}
             </button>

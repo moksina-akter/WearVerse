@@ -56,7 +56,8 @@ export default function OrderSuccessPage() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
           <Link
             href="/products"
-            className=" text-white px-8 py-4 rounded-2xl font-semibold hover:bg-gray-700 bg-gray-800 transition flex items-center justify-center gap-2"
+            className="transition-all duration-300
+hover:scale-105 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-gray-700 bg-gray-800 flex items-center justify-center gap-2"
           >
             <ShoppingBag size={20} />
             Continue Shopping
@@ -64,7 +65,8 @@ export default function OrderSuccessPage() {
 
           <Link
             href="/"
-            className="border flex items-center hover:bg-gray-300 border-gray-200 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 transition"
+            className="border flex items-center hover:bg-gray-300 border-gray-200 px-8 py-4 rounded-2xl font-semibold transition-all duration-300
+hover:scale-105"
           >
             Back To Home
             <ArrowRight size={18} />

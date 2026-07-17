@@ -4,8 +4,8 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-gray-600 to-gray-700 text-white mt-24">
-      <div className="max-w-7xl mx-auto px-4 py-5">
+    <footer className="bg-gradient-to-b from-gray-600 to-gray-700 text-white mt-4">
+      <div className="max-w-7xl mx-auto px-4 pt-10 pb-3">
         <div className="grid md:grid-cols-4 gap-10">
           {/* Logo */}
           <div>
@@ -100,7 +100,7 @@ export default function Footer() {
           </div>
         </div>
         {/* Newsletter */}
-        <div className="border-t border-gray-800 mt-12 pt-12">
+        {/* <div className="border-t border-gray-800 mt-12 pt-12">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold">Join Our Newsletter</h2>
 
@@ -121,7 +121,7 @@ export default function Footer() {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="border-t border-gray-400 mt-8 pt-4 text-center text-gray-500">
           © 2026 WearVerse. All rights reserved.
         </div>

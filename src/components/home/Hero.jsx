@@ -38,7 +38,8 @@ export default function Hero() {
           <div className="flex flex-wrap gap-4 mb-10">
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 bg-gray-800 text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex transition-all 
+hover:scale-105 items-center gap-2 bg-gray-800 text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-700 duration-300 shadow-lg hover:shadow-xl"
             >
               Shop Collection
               <ArrowRight size={18} />
@@ -46,7 +47,8 @@ export default function Hero() {
 
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 hover:bg-gray-400 bg-white border border-gray-200 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all"
+              className="inline-flex transition-all duration-300
+hover:scale-105 items-center gap-2 hover:bg-gray-400 bg-white border border-gray-200 text-gray-700 px-8 py-4 rounded-xl font-semibold "
             >
               Explore More
             </Link>

@@ -6,7 +6,7 @@ export default function FeaturedProducts() {
   const featured = products.slice(0, 4);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-12 md:py-16">
+    <section className="max-w-7xl mx-auto px-4 py-12 md:py-10">
       <div className="flex justify-between items-end mb-8 md:mb-10">
         <div>
           <p className="text-sm text-gray-500 uppercase tracking-[4px]">
@@ -19,7 +19,8 @@ export default function FeaturedProducts() {
 
         <Link
           href="/products"
-          className="text-sm md:text-sm text-gray-600 hover:text-black transition"
+          className="text-sm transition-all duration-300
+hover:scale-105 md:text-sm text-gray-600 hover:text-black "
         >
           View All
         </Link>

@@ -63,7 +63,8 @@ export default function CartPage() {
 
         <Link
           href="/products"
-          className="bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-white px-1 py-4 rounded-xl"
+          className="bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-white px-1 py-4 transition-all duration-300
+hover:scale-105 rounded-xl"
         >
           Continue Shopping <ArrowRight size={18} />
         </Link>
@@ -133,7 +134,8 @@ export default function CartPage() {
 
           <Link
             href="/products"
-            className="inline-flex items-center mt-8 text-gray-600 hover:text-black"
+            className="inline-flex items-center transition-all duration-300
+hover:scale-105 mt-8 text-gray-600 hover:text-black"
           >
             ← Continue Shopping
           </Link>
@@ -164,7 +166,8 @@ export default function CartPage() {
 
           <Link
             href="/checkout"
-            className="w-full block text-center bg-gray-800  text-white py-4 rounded-2xl font-semibold hover:bg-gray-700 transition"
+            className="w-full transition-all duration-300
+hover:scale-105 block text-center bg-gray-800  text-white py-4 rounded-2xl font-semibold hover:bg-gray-700"
           >
             Checkout
           </Link>

@@ -29,7 +29,8 @@ export default function ProductDetailsPage({ params }) {
 
         <Link
           href="/products"
-          className="bg-black text-white px-6 py-3 rounded-xl"
+          className="bg-black transition-all duration-300
+hover:scale-105 text-white px-6 py-3 rounded-xl"
         >
           Back To Products
         </Link>
@@ -57,14 +58,14 @@ export default function ProductDetailsPage({ params }) {
       <div className="text-sm text-gray-500 mb-10">
         <Link
           href="/"
-          className="text-sm md:text-sm text-gray-600 hover:text-black transition"
+          className="text-sm md:text-sm text-gray-600 hover:text-black "
         >
           Home
         </Link>{" "}
         /
         <Link
           href="/products"
-          className="text-sm md:text-sm text-gray-600 hover:text-black transition"
+          className="text-sm md:text-sm text-gray-600 hover:text-black"
         >
           Products
         </Link>{" "}
@@ -208,7 +209,8 @@ export default function ProductDetailsPage({ params }) {
                   description: `${selectedSize} • ${selectedColor} • Qty: ${quantity}`,
                 });
               }}
-              className="flex-1 bg-gray-800 text-white py-4 rounded-2xl font-semibold flex justify-center items-center gap-3 hover:bg-gray-700 transition"
+              className="flex-1 bg-gray-800 text-white py-4 transition-all duration-300
+hover:scale-105 rounded-2xl font-semibold flex justify-center items-center gap-3 hover:bg-gray-700 "
             >
               <ShoppingBag size={20} />
               Add To Cart
@@ -225,7 +227,8 @@ export default function ProductDetailsPage({ params }) {
                 addToWishlist(product);
                 toast.success("Added to wishlist ❤️");
               }}
-              className="w-16 rounded-2xl border hover:text-red-400 border-gray-200 flex justify-center items-center hover:bg-gray-100  transition"
+              className="w-16 rounded-2xl border transition-all duration-300
+hover:scale-105 hover:text-red-400 border-gray-200 flex justify-center items-center hover:bg-gray-100 "
             >
               <Heart
                 size={22}
@@ -274,10 +277,11 @@ export default function ProductDetailsPage({ params }) {
             <Link
               key={item.id}
               href={`/products/${item.id}`}
-              className="bg-white border border-gray-300 rounded-3xl p-5 hover:shadow-xl transition"
+              className="bg-white border transition-all duration-300
+hover:scale-105 border-gray-300 rounded-3xl p-5 hover:shadow-xl "
             >
               <div className="bg-gray-50 rounded-2xl p-5">
-                <img src={item.image} className="h-64 w-full object-contain" />
+                <img className="h-64 w-full object-contain" src={item.image} />
               </div>
 
               <h3 className="font-semibold mt-5 line-clamp-1">{item.name}</h3>

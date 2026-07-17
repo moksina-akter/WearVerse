@@ -28,7 +28,8 @@ export default function WishlistPage() {
 
         <Link
           href="/products"
-          className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 rounded-2xl"
+          className="bg-gray-800 transition-all duration-300
+hover:scale-105 hover:bg-gray-700 text-white px-8 py-4 rounded-2xl"
         >
           Explore Products
         </Link>
@@ -38,15 +39,15 @@ export default function WishlistPage() {
 
   return (
     <section className="max-w-7xl mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-10">My Wishlist</h1>
+      <h1 className="text-4xl font-bold mb-15">My Wishlist</h1>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
         {wishlistItems.map((item) => (
           <div
             key={item.id}
             className="bg-white border border-gray-100 rounded-3xl overflow-hidden hover:shadow-xl transition"
           >
-            <div className="bg-gray-50 p-6">
+            <div className="bg-gray-50 px-12 p-6">
               <img
                 src={item.image}
                 alt={item.name}
@@ -64,7 +65,8 @@ export default function WishlistPage() {
               <div className="flex gap-3 mt-5">
                 <Link
                   href={`/products/${item.id}`}
-                  className="flex-1 bg-gray-800 hover:bg-gray-700 text-white text-center py-3 rounded-xl"
+                  className="flex-1 bg-gray-800 transition-all duration-300
+hover:scale-105 hover:bg-gray-700 text-white text-center py-3 rounded-xl"
                 >
                   View Details
                 </Link>

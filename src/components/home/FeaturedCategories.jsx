@@ -46,7 +46,8 @@ export default function FeaturedCategories() {
 
         <Link
           href="/products"
-          className="text-sm md:text-sm text-gray-600 hover:text-black transition"
+          className="text-sm transition-all duration-300
+hover:scale-105 md:text-sm text-gray-600 hover:text-black "
         >
           View All
         </Link>
@@ -60,7 +61,7 @@ export default function FeaturedCategories() {
             href={`/products?category=${category.name}`}
             className="group"
           >
-            <div className="bg-white rounded-3xl border border-gray-200 p-5 hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+            <div className="bg-white rounded-3xl border border-gray-200 p-5 hover:shadow-lg hover:-translate-y-2">
               <div className="relative w-full h-36 overflow-hidden rounded-2xl bg-gray-50">
                 <Image
                   src={category.image}
