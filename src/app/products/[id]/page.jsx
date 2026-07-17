@@ -1,5 +1,7 @@
 "use client";
 
+import { addToWishlist } from "@/utils/wishlist";
+// import { toast } from "react-toastify";
 import { products } from "@/data/products";
 import Link from "next/link";
 import {
@@ -212,11 +214,23 @@ export default function ProductDetailsPage({ params }) {
               Add To Cart
             </button>
 
-            <button
+            {/* <button
               onClick={() => setWishlist(!wishlist)}
               className="w-16 rounded-2xl border border-gray-200 flex justify-center items-center hover:bg-gray-100 transition"
             >
               <Heart className={wishlist ? "fill-red-500 text-red-500" : ""} />
+            </button> */}
+            <button
+              onClick={() => {
+                addToWishlist(product);
+                toast.success("Added to wishlist ❤️");
+              }}
+              className="w-16 rounded-2xl border hover:text-red-400 border-gray-200 flex justify-center items-center hover:bg-gray-100  transition"
+            >
+              <Heart
+                size={22}
+                className={wishlist ? "fill-red-500 text-red-500" : ""}
+              />
             </button>
           </div>
 

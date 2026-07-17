@@ -56,11 +56,11 @@ export default function FeaturedCategories() {
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
         {categories.map((category) => (
           <Link
-            key={category.id}
-            href={`/products?category=${category.slug}`}
+            key={category.name}
+            href={`/products?category=${category.name}`}
             className="group"
           >
-            <div className="bg-white rounded-3xl border border-gray-100 p-5 hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+            <div className="bg-white rounded-3xl border border-gray-200 p-5 hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
               <div className="relative w-full h-36 overflow-hidden rounded-2xl bg-gray-50">
                 <Image
                   src={category.image}

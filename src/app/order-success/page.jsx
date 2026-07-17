@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CheckCircle2, ShoppingBag } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShoppingBag } from "lucide-react";
 
 export default function OrderSuccessPage() {
   const orderId = `WV${Math.floor(100000 + Math.random() * 900000)}`;
@@ -64,9 +64,10 @@ export default function OrderSuccessPage() {
 
           <Link
             href="/"
-            className="border border-gray-200 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 transition"
+            className="border flex items-center hover:bg-gray-300 border-gray-200 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 transition"
           >
             Back To Home
+            <ArrowRight size={18} />
           </Link>
         </div>
       </div>
